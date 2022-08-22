@@ -1,0 +1,40 @@
+package com.tca.main;
+
+CREATE OR REPLACE FUNCTION msg()
+returns varchar as'
+
+BEGIN
+	return 'Hello Rushi';
+END;
+'LANGUAGE 'plpgsql';
+
+
+select msg();
+drop function msg();
+
+
+
+
+//Addition
+
+CREATE OR REPLACE FUNCTION add(a int, b int)
+returns int as'
+DECLARE 
+	ans int;
+BEGIN
+	ans = a + b;
+	return ans;
+END;
+'LANGUAGE 'plpgsql';
+
+
+
+CREATE OR REPLACE FUNCTION addinfo(r int , nm varchar, ph varchar, p float)
+returns void as'
+
+BEGIN
+	insert into student values(r,nm,ph,p);
+END;
+'LANGUAGE 'plpgsql';
+
+select addinfo(105, 'abhishek', '458574521', 89);

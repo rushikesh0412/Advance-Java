@@ -1,0 +1,4 @@
+
+
+
+Delete from student where rno=?
